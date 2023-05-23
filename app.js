@@ -3,7 +3,8 @@ const app = express()
 const path = require('path')
 const PORT = 3000
 
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/public', express.static(__dirname + '/public'));
+
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('^/$|home(.html)?', (req, res, next) => {
